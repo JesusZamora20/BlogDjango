@@ -19,3 +19,6 @@ class Website(models.Model):
     rating = models.IntegerField()
     status = models.CharField(choices=STATUS_CHOICES, max_length=1)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
+
+class Car(models.Model):
+    name = models.CharField(max_length=30, primary_key=True)
