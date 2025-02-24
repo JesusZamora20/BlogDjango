@@ -4,7 +4,7 @@ from django.db import models
 class User(models.Model):
     first_name = models.CharField("The name of the person",max_length=30)
     last_name = models.CharField("The last name of the person",max_length=30)
-    cars = models.ManyutoManyField('Car', verbose_name="cars owned by the user")
+    cars = models.ManytoManyField('Car', verbose_name="cars owned by the user")
 
 STATUS_CHOICES = (
     ('R', 'Reviewed'),
