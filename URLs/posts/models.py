@@ -32,4 +32,4 @@ class Entry(models.Model):
         return self.headline
 
     def get_absolute_url(self):
-        return redirect(reverse('entries:entry-detail', kwargs={'id': self.id}))
+        return redirect(reverse("entries:entry-detail", kwargs={'id': self.id}))
