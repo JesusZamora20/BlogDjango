@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.http import HttpResponse, HttpResponseNotFound
 import datetime
 
@@ -13,3 +13,6 @@ def status_code_view(request, exception):
 
 def entry_list(request):
     return render(request, 'posts/post_list.html', {})
+
+def redirect_back_home(request):
+    return redirect('entries:entry_detail', id=1)
