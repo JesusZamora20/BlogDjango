@@ -3,9 +3,9 @@ from django.http import HttpResponse, HttpResponseNotFound
 import datetime
 
 # Create your views here.
-def dummy_view(request):
+def dummy_view(request, id):
     now = datetime.datetime.now()
-    html = "<html><body>It is now %s.</body></html>" % now
+    html = f"<html><body>It is now {now} and the id is {id} %s.</body></html>" 
     return HttpResponse(html)
 
 def status_code_view(request, exception):
@@ -15,4 +15,4 @@ def entry_list(request):
     return render(request, 'posts/post_list.html', {})
 
 def redirect_back_home(request):
-    return redirect('entries:entry_detail', id=1)
+    return redirect('/entries/1')
