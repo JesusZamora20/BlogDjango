@@ -28,6 +28,10 @@ class Post(models.Model):
         return reverse("detail", kwargs={"slug": self.slug})
     
     @property
+    def comments(self):
+        return self.comment_set.all()
+    
+    @property
     def get_comment_count(self):
         comment_count = self.comment_set.all().count()
         return comment_count
