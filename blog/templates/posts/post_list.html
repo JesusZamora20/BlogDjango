@@ -20,7 +20,9 @@
                             <span><i class = "fas fa-comments ml-4"></i>{{ object.get_comment_count }}</span>
                         </P>
 
-                        <p></p>
+                        <p class="card-text">
+                            posted {{ object.publish_date|timesince }} ago
+                        </p>
                     </div>
                 </div>
             </div>
